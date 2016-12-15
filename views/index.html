@@ -1,0 +1,23 @@
+$def with (form, result)
+
+<form name="main" method="post">
+    <h1><center><font color="green">____________________________________________________</h1>
+    <h2><center><font color="green" face="Aharoni">RENTA DE PELICULAS</h2>
+    <h1><center>_________________________________________________________________</h2>
+
+$if not form.valid:<p class="error">Información erronea</p>
+$:form.render()
+
+<input type="SUBMIT" /></form>
+
+<table border="10px" bordercolor="green" ALIGN=center>
+    <th>CLIENTES</th>
+    <th>PELICULA</th>
+    <th>FORMATO</th>
+    <th>TIEMPO</th>
+    <th>TOTAL</th>
+    $for row in result:
+     <tr>
+         <td>$row.cliente</td> <td>$row.pelicula</td> <td>$row.formato</td> <td>$row.tiempo </td> <td>$row.total </td>
+    </tr>
+</table>
